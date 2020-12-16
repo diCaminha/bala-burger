@@ -1,10 +1,16 @@
 import React from "react";
 
+const controls = [
+  { label: "Salad", type: "salad" },
+  { label: "Cheese", type: "cheese" },
+  { label: "Meat", type: "meat" },
+];
+
 const buildControls = (props) => (
-  <div>
-    <div>{props.label}</div>
-    <button>Less</button>
-    <button>More</button>
+  <div className={classes.BuildControls}>
+    {controls.map((ctrl) => (
+      <BuildControl key={ctrl.label} label={ctrl.label} />
+    ))}
   </div>
 );
 
